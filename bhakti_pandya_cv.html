@@ -1,0 +1,611 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Bhakti Pandya – CV</title>
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,700;0,900;1,400&family=DM+Sans:wght@300;400;500&family=Space+Mono:wght@400;700&display=swap" rel="stylesheet">
+<style>
+  *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+  :root {
+    --ink: #0d0d0d;
+    --paper: #f5f0e8;
+    --accent: #c8432a;
+    --gold: #c9a84c;
+    --mid: #6b6b6b;
+    --light: #e8e2d6;
+  }
+
+  body {
+    background: var(--paper);
+    color: var(--ink);
+    font-family: 'DM Sans', sans-serif;
+    font-size: 13px;
+    line-height: 1.6;
+    -webkit-font-smoothing: antialiased;
+  }
+
+  /* ── PAGE WRAPPER ── */
+  .page {
+    max-width: 900px;
+    margin: 0 auto;
+    padding: 60px 48px 80px;
+    position: relative;
+  }
+
+  /* ── DECORATIVE GRID LINES ── */
+  .page::before {
+    content: '';
+    position: fixed;
+    top: 0; left: 0; right: 0; bottom: 0;
+    background-image:
+      repeating-linear-gradient(0deg, transparent, transparent 59px, rgba(0,0,0,.06) 60px),
+      repeating-linear-gradient(90deg, transparent, transparent 59px, rgba(0,0,0,.04) 60px);
+    pointer-events: none;
+    z-index: 0;
+  }
+
+  /* ── HEADER ── */
+  header {
+    position: relative;
+    z-index: 1;
+    display: grid;
+    grid-template-columns: 1fr auto;
+    gap: 32px;
+    align-items: end;
+    border-bottom: 3px solid var(--ink);
+    padding-bottom: 28px;
+    margin-bottom: 40px;
+  }
+
+  .header-left {}
+
+  .issue-tag {
+    font-family: 'Space Mono', monospace;
+    font-size: 10px;
+    letter-spacing: .2em;
+    text-transform: uppercase;
+    color: var(--accent);
+    margin-bottom: 8px;
+  }
+
+  h1 {
+    font-family: 'Playfair Display', serif;
+    font-size: 64px;
+    font-weight: 900;
+    line-height: .95;
+    letter-spacing: -.02em;
+    color: var(--ink);
+  }
+
+  h1 span {
+    display: block;
+    color: var(--accent);
+    font-style: italic;
+  }
+
+  .tagline {
+    margin-top: 14px;
+    font-size: 12.5px;
+    color: var(--mid);
+    font-style: italic;
+    max-width: 380px;
+    line-height: 1.7;
+  }
+
+  .header-right {
+    text-align: right;
+    padding-bottom: 6px;
+  }
+
+  .contact-block {
+    font-family: 'Space Mono', monospace;
+    font-size: 10.5px;
+    color: var(--mid);
+    line-height: 2;
+  }
+
+  .contact-block a {
+    color: var(--accent);
+    text-decoration: none;
+  }
+
+  /* ── ROLE TAG ── */
+  .role-pill {
+    display: inline-block;
+    background: var(--ink);
+    color: var(--paper);
+    font-family: 'Space Mono', monospace;
+    font-size: 9.5px;
+    letter-spacing: .18em;
+    text-transform: uppercase;
+    padding: 5px 14px;
+    margin-top: 18px;
+  }
+
+  /* ── BODY GRID ── */
+  .body-grid {
+    position: relative;
+    z-index: 1;
+    display: grid;
+    grid-template-columns: 1fr 260px;
+    gap: 48px;
+  }
+
+  /* ── SECTION TITLES ── */
+  .section-label {
+    font-family: 'Space Mono', monospace;
+    font-size: 9px;
+    letter-spacing: .25em;
+    text-transform: uppercase;
+    color: var(--accent);
+    margin-bottom: 14px;
+    display: flex;
+    align-items: center;
+    gap: 10px;
+  }
+
+  .section-label::after {
+    content: '';
+    flex: 1;
+    height: 1px;
+    background: var(--gold);
+    opacity: .5;
+  }
+
+  /* ── EXPERIENCE ── */
+  .exp-item {
+    margin-bottom: 28px;
+    padding-bottom: 28px;
+    border-bottom: 1px solid var(--light);
+  }
+
+  .exp-item:last-child {
+    border-bottom: none;
+  }
+
+  .exp-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: baseline;
+    margin-bottom: 3px;
+  }
+
+  .exp-title {
+    font-family: 'Playfair Display', serif;
+    font-size: 17px;
+    font-weight: 700;
+    color: var(--ink);
+  }
+
+  .exp-date {
+    font-family: 'Space Mono', monospace;
+    font-size: 9.5px;
+    color: var(--mid);
+    white-space: nowrap;
+  }
+
+  .exp-company {
+    font-size: 11.5px;
+    color: var(--mid);
+    font-style: italic;
+    margin-bottom: 10px;
+  }
+
+  .exp-bullets {
+    list-style: none;
+    padding: 0;
+  }
+
+  .exp-bullets li {
+    position: relative;
+    padding-left: 16px;
+    margin-bottom: 5px;
+    font-size: 12.5px;
+    color: #2a2a2a;
+    line-height: 1.65;
+  }
+
+  .exp-bullets li::before {
+    content: '▸';
+    position: absolute;
+    left: 0;
+    color: var(--accent);
+    font-size: 10px;
+    top: 2px;
+  }
+
+  .highlight {
+    background: linear-gradient(90deg, rgba(200,67,42,.12) 0%, transparent 100%);
+    padding: 1px 4px;
+    border-radius: 2px;
+    font-weight: 500;
+  }
+
+  /* ── EDUCATION ── */
+  .edu-item {
+    margin-bottom: 22px;
+  }
+
+  .edu-degree {
+    font-family: 'Playfair Display', serif;
+    font-size: 15px;
+    font-weight: 700;
+  }
+
+  .edu-uni {
+    font-size: 11px;
+    color: var(--mid);
+    font-style: italic;
+  }
+
+  .edu-date {
+    font-family: 'Space Mono', monospace;
+    font-size: 9px;
+    color: var(--gold);
+    margin: 3px 0 6px;
+  }
+
+  .edu-focus {
+    font-size: 11.5px;
+    color: #3a3a3a;
+    line-height: 1.6;
+  }
+
+  /* ── SIDEBAR ── */
+  .sidebar {
+    border-left: 2px solid var(--ink);
+    padding-left: 28px;
+  }
+
+  .sidebar-section {
+    margin-bottom: 34px;
+  }
+
+  /* ── SKILLS ── */
+  .skill-group {
+    margin-bottom: 18px;
+  }
+
+  .skill-group-label {
+    font-family: 'Space Mono', monospace;
+    font-size: 9px;
+    text-transform: uppercase;
+    letter-spacing: .15em;
+    color: var(--mid);
+    margin-bottom: 8px;
+  }
+
+  .skill-tags {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 5px;
+  }
+
+  .tag {
+    background: var(--ink);
+    color: var(--paper);
+    font-size: 10px;
+    font-family: 'DM Sans', sans-serif;
+    padding: 3px 9px;
+    border-radius: 2px;
+  }
+
+  .tag.outline {
+    background: transparent;
+    border: 1px solid var(--ink);
+    color: var(--ink);
+  }
+
+  .tag.gold {
+    background: var(--gold);
+    color: var(--ink);
+  }
+
+  /* ── LANGUAGES ── */
+  .lang-item {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 10px;
+  }
+
+  .lang-name {
+    font-size: 12px;
+    font-weight: 500;
+  }
+
+  .lang-dots {
+    display: flex;
+    gap: 4px;
+  }
+
+  .dot {
+    width: 7px; height: 7px;
+    border-radius: 50%;
+    background: var(--light);
+    border: 1.5px solid var(--mid);
+  }
+
+  .dot.filled {
+    background: var(--accent);
+    border-color: var(--accent);
+  }
+
+  /* ── AWARDS / CERTS ── */
+  .award-item {
+    margin-bottom: 12px;
+    padding-left: 12px;
+    border-left: 2px solid var(--gold);
+    font-size: 11.5px;
+    line-height: 1.5;
+  }
+
+  .award-item strong {
+    display: block;
+    font-weight: 500;
+    color: var(--ink);
+  }
+
+  .award-item span {
+    color: var(--mid);
+    font-size: 10.5px;
+  }
+
+  /* ── INFINEON FIT BOX ── */
+  .fit-box {
+    background: var(--ink);
+    color: var(--paper);
+    padding: 20px 22px;
+    margin-top: 32px;
+    position: relative;
+    z-index: 1;
+  }
+
+  .fit-box .fit-label {
+    font-family: 'Space Mono', monospace;
+    font-size: 9px;
+    letter-spacing: .2em;
+    text-transform: uppercase;
+    color: var(--gold);
+    margin-bottom: 10px;
+  }
+
+  .fit-box p {
+    font-size: 11.5px;
+    line-height: 1.7;
+    color: #d4cfc6;
+    font-style: italic;
+  }
+
+  /* ── FOOTER ── */
+  footer {
+    position: relative;
+    z-index: 1;
+    margin-top: 48px;
+    padding-top: 16px;
+    border-top: 1px solid var(--light);
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+  }
+
+  footer .f-note {
+    font-family: 'Space Mono', monospace;
+    font-size: 9px;
+    color: var(--mid);
+    letter-spacing: .1em;
+  }
+
+  footer .f-mark {
+    font-family: 'Playfair Display', serif;
+    font-style: italic;
+    font-size: 15px;
+    color: var(--accent);
+  }
+
+  /* ── PRINT ── */
+  @media print {
+    body { background: white; }
+    .page { padding: 40px 36px; }
+    .page::before { display: none; }
+  }
+
+  @media (max-width: 720px) {
+    .body-grid { grid-template-columns: 1fr; }
+    .sidebar { border-left: none; padding-left: 0; border-top: 2px solid var(--ink); padding-top: 28px; }
+    h1 { font-size: 46px; }
+    header { grid-template-columns: 1fr; }
+    .header-right { text-align: left; }
+  }
+</style>
+</head>
+<body>
+<div class="page">
+
+  <!-- HEADER -->
+  <header>
+    <div class="header-left">
+      <div class="issue-tag">Applicant · Student Worker · Communication</div>
+      <h1>Bhakti<span>Pandya</span></h1>
+      <p class="tagline">Creative communicator who turns complex ideas into compelling stories — through words, visuals, and everything in between.</p>
+      <div class="role-pill">Applying for: Internal Communication · Infineon Technologies</div>
+    </div>
+    <div class="header-right">
+      <div class="contact-block">
+        +49 15563952785<br>
+        <a href="mailto:bhaktipandya2503@gmail.com">bhaktipandya2503@gmail.com</a><br>
+        64295 Darmstadt, Germany<br>
+      </div>
+    </div>
+  </header>
+
+  <!-- BODY -->
+  <div class="body-grid">
+
+    <!-- MAIN COLUMN -->
+    <main>
+
+      <!-- EXPERIENCE -->
+      <div class="section-label">Experience</div>
+
+      <div class="exp-item">
+        <div class="exp-header">
+          <div class="exp-title">Communication Support Intern</div>
+          <div class="exp-date">Nov 2024 – Apr 2025</div>
+        </div>
+        <div class="exp-company">Ashwini Pradhan Global · Vadodara</div>
+        <ul class="exp-bullets">
+          <li>Created <span class="highlight">textual and visual content</span> for internal blogposts and e-mails — directly matching the core writing responsibilities of this role.</li>
+          <li>Produced video clips and social media visuals (ads, posters) for digital communication, <span class="highlight">increasing audience engagement by 35%</span>.</li>
+          <li>Collaborated in planning and organising internal communication including writing, graphic design, and <span class="highlight">video shoots at various events</span>.</li>
+          <li>Supported copywriting and storytelling for newsletters and project update campaigns.</li>
+          <li>Managed community communication across departments and tracked <span class="highlight">media analytics</span> for continuous improvement.</li>
+        </ul>
+      </div>
+
+      <div class="exp-item">
+        <div class="exp-header">
+          <div class="exp-title">Teaching Assistant Intern</div>
+          <div class="exp-date">Jan 2024 – Oct 2024</div>
+        </div>
+        <div class="exp-company">M.S. University Baroda · Vadodara</div>
+        <ul class="exp-bullets">
+          <li>Graded 200+ assignments with <span class="highlight">98% accuracy</span>; optimised Excel workflows, cutting processing time by 30%.</li>
+          <li>Designed modern teaching materials — <span class="highlight">PowerPoint decks, Canva graphics, lecture notes</span> — boosting student engagement by 40%.</li>
+          <li>Assisted in curriculum planning and event organisation, reducing faculty preparation time by 25%.</li>
+        </ul>
+      </div>
+
+      <!-- EDUCATION -->
+      <div class="section-label" style="margin-top:32px;">Education</div>
+
+      <div class="edu-item">
+        <div class="edu-degree">M.A. Data and Discourse Studies</div>
+        <div class="edu-uni">Technische Universität Darmstadt</div>
+        <div class="edu-date">April 2025 – Present</div>
+        <div class="edu-focus">Focus: Language Discourse · Research Methods · Data Analysis · Communication. Projects on Media Discourses on Climate Change and Multimodal Discourse Analysis.</div>
+      </div>
+
+      <div class="edu-item">
+        <div class="edu-degree">B.A. English (Hons.)</div>
+        <div class="edu-uni">Maharaja Sayajirao University of Baroda</div>
+        <div class="edu-date">Oct 2021 – Apr 2024</div>
+        <div class="edu-focus">Focus: Linguistics · Literature · Academic Writing · Storytelling. Co-founded the university's literary association.</div>
+      </div>
+
+      <!-- FIT BOX -->
+      <div class="fit-box">
+        <div class="fit-label">Why Infineon · Why Now</div>
+        <p>I am a master's student enrolled at TU Darmstadt, available up to 20 hours per week during semester, and based in Darmstadt — close to Infineon's Neubiberg headquarters. My hands-on experience in internal communication, content production, and event support maps directly onto every listed responsibility. I am ready to bring creative energy to real projects from day one.</p>
+      </div>
+
+    </main>
+
+    <!-- SIDEBAR -->
+    <aside class="sidebar">
+
+      <div class="sidebar-section">
+        <div class="section-label">Tools &amp; Software</div>
+        <div class="skill-group">
+          <div class="skill-group-label">Office &amp; Collab</div>
+          <div class="skill-tags">
+            <span class="tag">PowerPoint</span>
+            <span class="tag">SharePoint</span>
+            <span class="tag">Teams</span>
+            <span class="tag">Excel</span>
+          </div>
+        </div>
+        <div class="skill-group">
+          <div class="skill-group-label">Creative</div>
+          <div class="skill-tags">
+            <span class="tag gold">Canva</span>
+            <span class="tag gold">Adobe CC</span>
+            <span class="tag outline">Video Editing</span>
+          </div>
+        </div>
+        <div class="skill-group">
+          <div class="skill-group-label">Core Skills</div>
+          <div class="skill-tags">
+            <span class="tag outline">Copywriting</span>
+            <span class="tag outline">Storytelling</span>
+            <span class="tag outline">Content Strategy</span>
+            <span class="tag outline">Community Mgmt</span>
+            <span class="tag outline">Research</span>
+            <span class="tag outline">Event Support</span>
+          </div>
+        </div>
+      </div>
+
+      <div class="sidebar-section">
+        <div class="section-label">Languages</div>
+        <div class="lang-item">
+          <span class="lang-name">English</span>
+          <div class="lang-dots">
+            <div class="dot filled"></div><div class="dot filled"></div>
+            <div class="dot filled"></div><div class="dot filled"></div><div class="dot filled"></div>
+          </div>
+        </div>
+        <div class="lang-item">
+          <span class="lang-name">German</span>
+          <div class="lang-dots">
+            <div class="dot filled"></div><div class="dot filled"></div>
+            <div class="dot filled"></div><div class="dot filled"></div><div class="dot"></div>
+          </div>
+        </div>
+        <div class="lang-item">
+          <span class="lang-name">French</span>
+          <div class="lang-dots">
+            <div class="dot filled"></div><div class="dot filled"></div>
+            <div class="dot filled"></div><div class="dot"></div><div class="dot"></div>
+          </div>
+        </div>
+        <div class="lang-item">
+          <span class="lang-name">Hindi</span>
+          <div class="lang-dots">
+            <div class="dot filled"></div><div class="dot filled"></div>
+            <div class="dot filled"></div><div class="dot filled"></div><div class="dot filled"></div>
+          </div>
+        </div>
+      </div>
+
+      <div class="sidebar-section">
+        <div class="section-label">Recognition</div>
+        <div class="award-item">
+          <strong>All India Rank 2 – Report Writing</strong>
+          <span>Times of India Newspaper</span>
+        </div>
+        <div class="award-item">
+          <strong>Published Author</strong>
+          <span>"A Hot Summer Night" &amp; "Off Track" — anthology publications</span>
+        </div>
+        <div class="award-item">
+          <strong>Conversation Partner Program</strong>
+          <span>Hyogo University, Japan</span>
+        </div>
+      </div>
+
+      <div class="sidebar-section">
+        <div class="section-label">Availability</div>
+        <p style="font-size:11.5px;line-height:1.7;color:#3a3a3a;">
+          Enrolled at TU Darmstadt<br>
+          Up to <strong>20 hrs / week</strong><br>
+          Available from: <strong>Immediately</strong><br>
+          Location: <strong>Darmstadt</strong><br>
+          Min. commitment: <strong>6 months</strong>
+        </p>
+      </div>
+
+    </aside>
+  </div>
+
+  <!-- FOOTER -->
+  <footer>
+    <span class="f-note">CV · Bhakti Pandya · 2025 · bhaktipandya2503@gmail.com</span>
+    <span class="f-mark">Are you in?</span>
+  </footer>
+
+</div>
+</body>
+</html>

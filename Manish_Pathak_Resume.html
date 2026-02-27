@@ -1,0 +1,984 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Manish V. Pathak – Chemical Plant Operations Expert</title>
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;600;700&family=DM+Sans:wght@300;400;500;600&family=DM+Mono:wght@400;500&display=swap" rel="stylesheet">
+<style>
+  :root {
+    --cream: #FDFAF5;
+    --warm-white: #FFFFFF;
+    --navy: #1A2E4A;
+    --navy-light: #2C4A6E;
+    --gold: #C8860A;
+    --gold-light: #F5A623;
+    --gold-pale: #FEF3DC;
+    --teal: #0E7C7B;
+    --teal-light: #E8F5F5;
+    --slate: #4A5568;
+    --slate-light: #718096;
+    --border: #E8E0D0;
+    --shadow: rgba(26,46,74,0.08);
+    --shadow-md: rgba(26,46,74,0.14);
+  }
+
+  * { margin: 0; padding: 0; box-sizing: border-box; }
+
+  body {
+    font-family: 'DM Sans', sans-serif;
+    background: var(--cream);
+    color: var(--navy);
+    min-height: 100vh;
+  }
+
+  /* ===== HERO HEADER ===== */
+  .hero {
+    background: linear-gradient(135deg, var(--navy) 0%, var(--navy-light) 60%, #1E3D5E 100%);
+    position: relative;
+    overflow: hidden;
+    padding: 0;
+  }
+
+  .hero::before {
+    content: '';
+    position: absolute;
+    top: -80px; right: -80px;
+    width: 400px; height: 400px;
+    background: radial-gradient(circle, rgba(200,134,10,0.18) 0%, transparent 70%);
+    border-radius: 50%;
+  }
+
+  .hero::after {
+    content: '';
+    position: absolute;
+    bottom: -60px; left: 20%;
+    width: 300px; height: 300px;
+    background: radial-gradient(circle, rgba(14,124,123,0.12) 0%, transparent 70%);
+    border-radius: 50%;
+  }
+
+  .hero-inner {
+    position: relative; z-index: 2;
+    max-width: 1000px;
+    margin: 0 auto;
+    padding: 52px 48px 44px;
+    display: grid;
+    grid-template-columns: 160px 1fr;
+    gap: 40px;
+    align-items: center;
+  }
+
+  .photo-wrap {
+    position: relative;
+  }
+
+  .photo-ring {
+    width: 148px; height: 148px;
+    border-radius: 50%;
+    border: 3px solid var(--gold);
+    padding: 4px;
+    background: linear-gradient(135deg, var(--gold), var(--gold-light));
+    box-shadow: 0 8px 32px rgba(200,134,10,0.35);
+    animation: floatIn 0.8s ease forwards;
+  }
+
+  .photo-ring img {
+    width: 100%; height: 100%;
+    border-radius: 50%;
+    object-fit: cover;
+    object-position: center top;
+    display: block;
+  }
+
+  .photo-badge {
+    position: absolute;
+    bottom: -6px; right: -6px;
+    background: var(--teal);
+    color: white;
+    font-size: 10px;
+    font-weight: 600;
+    padding: 4px 8px;
+    border-radius: 20px;
+    letter-spacing: 0.5px;
+    border: 2px solid var(--navy);
+    white-space: nowrap;
+  }
+
+  .hero-info { animation: slideUp 0.7s ease forwards; }
+
+  .hero-name {
+    font-family: 'Playfair Display', serif;
+    font-size: 42px;
+    font-weight: 700;
+    color: #FFFFFF;
+    line-height: 1.1;
+    letter-spacing: -0.5px;
+    margin-bottom: 6px;
+  }
+
+  .hero-title {
+    font-size: 15px;
+    font-weight: 500;
+    color: var(--gold-light);
+    margin-bottom: 16px;
+    letter-spacing: 0.3px;
+  }
+
+  .hero-tags {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 8px;
+    margin-bottom: 22px;
+  }
+
+  .hero-tag {
+    background: rgba(255,255,255,0.1);
+    border: 1px solid rgba(255,255,255,0.2);
+    color: rgba(255,255,255,0.88);
+    font-size: 11px;
+    font-weight: 500;
+    padding: 4px 12px;
+    border-radius: 20px;
+    letter-spacing: 0.3px;
+  }
+
+  .hero-contacts {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 18px;
+  }
+
+  .hero-contact {
+    display: flex;
+    align-items: center;
+    gap: 7px;
+    color: rgba(255,255,255,0.75);
+    font-size: 12.5px;
+    font-weight: 400;
+    text-decoration: none;
+  }
+
+  .hero-contact .icon {
+    width: 28px; height: 28px;
+    background: rgba(255,255,255,0.12);
+    border-radius: 8px;
+    display: flex; align-items: center; justify-content: center;
+    font-size: 13px;
+    flex-shrink: 0;
+  }
+
+  /* ===== STATS BAR ===== */
+  .stats-bar {
+    background: var(--gold-pale);
+    border-bottom: 1px solid var(--border);
+    padding: 0;
+  }
+
+  .stats-inner {
+    max-width: 1000px;
+    margin: 0 auto;
+    padding: 0 48px;
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+  }
+
+  .stat {
+    padding: 20px 0;
+    border-right: 1px solid var(--border);
+    text-align: center;
+    position: relative;
+    animation: fadeIn 1s ease forwards;
+  }
+
+  .stat:last-child { border-right: none; }
+
+  .stat-num {
+    font-family: 'Playfair Display', serif;
+    font-size: 30px;
+    font-weight: 700;
+    color: var(--navy);
+    line-height: 1;
+    display: block;
+  }
+
+  .stat-label {
+    font-size: 11px;
+    color: var(--slate-light);
+    font-weight: 500;
+    text-transform: uppercase;
+    letter-spacing: 0.8px;
+    margin-top: 4px;
+    display: block;
+  }
+
+  /* ===== MAIN LAYOUT ===== */
+  .main {
+    max-width: 1000px;
+    margin: 0 auto;
+    padding: 40px 48px;
+    display: grid;
+    grid-template-columns: 1fr 280px;
+    gap: 40px;
+    align-items: start;
+  }
+
+  /* ===== SECTION STYLES ===== */
+  .section { margin-bottom: 40px; }
+
+  .section-header {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    margin-bottom: 22px;
+  }
+
+  .section-icon {
+    width: 36px; height: 36px;
+    background: var(--navy);
+    border-radius: 10px;
+    display: flex; align-items: center; justify-content: center;
+    font-size: 16px;
+    flex-shrink: 0;
+  }
+
+  .section-title {
+    font-family: 'Playfair Display', serif;
+    font-size: 20px;
+    font-weight: 600;
+    color: var(--navy);
+    letter-spacing: -0.3px;
+  }
+
+  .section-line {
+    flex: 1;
+    height: 1px;
+    background: linear-gradient(to right, var(--gold), transparent);
+    margin-left: 4px;
+  }
+
+  /* ===== SUMMARY ===== */
+  .summary-card {
+    background: white;
+    border-radius: 16px;
+    padding: 24px 28px;
+    border-left: 4px solid var(--gold);
+    box-shadow: 0 2px 16px var(--shadow);
+    line-height: 1.75;
+    font-size: 14px;
+    color: var(--slate);
+    position: relative;
+  }
+
+  .summary-card::before {
+    content: '"';
+    font-family: 'Playfair Display', serif;
+    font-size: 80px;
+    color: var(--gold-pale);
+    position: absolute;
+    top: -10px; left: 16px;
+    line-height: 1;
+  }
+
+  /* ===== EXPERIENCE ===== */
+  .job-card {
+    background: white;
+    border-radius: 16px;
+    padding: 22px 24px;
+    margin-bottom: 16px;
+    box-shadow: 0 2px 16px var(--shadow);
+    border: 1px solid var(--border);
+    position: relative;
+    overflow: hidden;
+    transition: box-shadow 0.25s, transform 0.25s;
+  }
+
+  .job-card:hover {
+    box-shadow: 0 8px 32px var(--shadow-md);
+    transform: translateY(-2px);
+  }
+
+  .job-card::before {
+    content: '';
+    position: absolute;
+    top: 0; left: 0;
+    width: 4px; height: 100%;
+    background: linear-gradient(to bottom, var(--teal), var(--gold));
+  }
+
+  .job-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
+    gap: 12px;
+    margin-bottom: 6px;
+  }
+
+  .job-title {
+    font-size: 15.5px;
+    font-weight: 600;
+    color: var(--navy);
+    line-height: 1.3;
+  }
+
+  .job-duration {
+    background: var(--teal-light);
+    color: var(--teal);
+    font-size: 11px;
+    font-weight: 600;
+    padding: 4px 10px;
+    border-radius: 20px;
+    white-space: nowrap;
+    font-family: 'DM Mono', monospace;
+  }
+
+  .job-company {
+    font-size: 13px;
+    font-weight: 500;
+    color: var(--gold);
+    margin-bottom: 12px;
+    display: flex;
+    align-items: center;
+    gap: 5px;
+  }
+
+  .job-bullets {
+    list-style: none;
+    display: flex;
+    flex-direction: column;
+    gap: 6px;
+  }
+
+  .job-bullets li {
+    font-size: 13px;
+    color: var(--slate);
+    line-height: 1.6;
+    padding-left: 16px;
+    position: relative;
+  }
+
+  .job-bullets li::before {
+    content: '▸';
+    position: absolute;
+    left: 0;
+    color: var(--teal);
+    font-size: 11px;
+    top: 2px;
+  }
+
+  /* ===== CURRENT JOB HIGHLIGHT ===== */
+  .job-card.current {
+    border: 1.5px solid rgba(14,124,123,0.25);
+    background: linear-gradient(135deg, #FAFFFE 0%, white 100%);
+  }
+
+  .current-badge {
+    background: linear-gradient(135deg, var(--teal), #0A6B6A);
+    color: white;
+    font-size: 10px;
+    font-weight: 600;
+    padding: 2px 8px;
+    border-radius: 20px;
+    letter-spacing: 0.5px;
+    margin-left: 8px;
+    vertical-align: middle;
+  }
+
+  /* ===== SIDEBAR ===== */
+  .sidebar {}
+
+  .sidebar-card {
+    background: white;
+    border-radius: 16px;
+    padding: 22px 22px;
+    margin-bottom: 20px;
+    box-shadow: 0 2px 16px var(--shadow);
+    border: 1px solid var(--border);
+  }
+
+  .sidebar-title {
+    font-family: 'Playfair Display', serif;
+    font-size: 15px;
+    font-weight: 600;
+    color: var(--navy);
+    margin-bottom: 16px;
+    display: flex;
+    align-items: center;
+    gap: 8px;
+  }
+
+  .sidebar-title::after {
+    content: '';
+    flex: 1;
+    height: 1.5px;
+    background: linear-gradient(to right, var(--gold), transparent);
+  }
+
+  /* Skills */
+  .skill-item {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    margin-bottom: 11px;
+  }
+
+  .skill-name {
+    font-size: 12.5px;
+    color: var(--slate);
+    font-weight: 500;
+    flex: 1;
+  }
+
+  .skill-bar {
+    width: 80px;
+    height: 5px;
+    background: var(--border);
+    border-radius: 10px;
+    overflow: hidden;
+    margin-left: 10px;
+  }
+
+  .skill-fill {
+    height: 100%;
+    border-radius: 10px;
+    background: linear-gradient(to right, var(--teal), var(--gold));
+    animation: growBar 1.2s ease forwards;
+    transform-origin: left;
+  }
+
+  /* Education */
+  .edu-item {
+    display: flex;
+    gap: 12px;
+    margin-bottom: 14px;
+    align-items: flex-start;
+  }
+
+  .edu-icon {
+    width: 36px; height: 36px;
+    background: var(--gold-pale);
+    border-radius: 10px;
+    display: flex; align-items: center; justify-content: center;
+    font-size: 16px;
+    flex-shrink: 0;
+  }
+
+  .edu-deg {
+    font-size: 13px;
+    font-weight: 600;
+    color: var(--navy);
+  }
+
+  .edu-year {
+    font-size: 11.5px;
+    color: var(--slate-light);
+    font-family: 'DM Mono', monospace;
+    margin-top: 2px;
+  }
+
+  /* Industries */
+  .industry-grid {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 7px;
+  }
+
+  .industry-tag {
+    background: var(--gold-pale);
+    color: var(--gold);
+    border: 1px solid rgba(200,134,10,0.25);
+    font-size: 11.5px;
+    font-weight: 500;
+    padding: 5px 10px;
+    border-radius: 20px;
+    transition: all 0.2s;
+  }
+
+  .industry-tag:hover {
+    background: var(--gold);
+    color: white;
+  }
+
+  /* Languages */
+  .lang-item {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    margin-bottom: 9px;
+    font-size: 13px;
+  }
+
+  .lang-name { color: var(--navy); font-weight: 500; }
+
+  .lang-level {
+    display: flex;
+    gap: 4px;
+  }
+
+  .lang-dot {
+    width: 8px; height: 8px;
+    border-radius: 50%;
+    background: var(--border);
+  }
+
+  .lang-dot.filled { background: var(--teal); }
+
+  /* Personal */
+  .personal-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 12px;
+  }
+
+  .personal-item {}
+
+  .personal-label {
+    font-size: 10.5px;
+    text-transform: uppercase;
+    letter-spacing: 0.8px;
+    color: var(--slate-light);
+    font-weight: 600;
+    margin-bottom: 2px;
+  }
+
+  .personal-value {
+    font-size: 13px;
+    color: var(--navy);
+    font-weight: 500;
+  }
+
+  /* ===== DECLARATION ===== */
+  .declaration {
+    max-width: 1000px;
+    margin: 0 auto 48px;
+    padding: 0 48px;
+  }
+
+  .declaration-inner {
+    background: linear-gradient(135deg, var(--navy) 0%, var(--navy-light) 100%);
+    border-radius: 16px;
+    padding: 24px 32px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 24px;
+    color: rgba(255,255,255,0.8);
+    font-size: 13px;
+    line-height: 1.6;
+  }
+
+  .declaration-sig {
+    font-family: 'Playfair Display', serif;
+    font-size: 22px;
+    color: var(--gold-light);
+    white-space: nowrap;
+  }
+
+  /* ===== ANIMATIONS ===== */
+  @keyframes floatIn {
+    from { opacity: 0; transform: scale(0.8); }
+    to { opacity: 1; transform: scale(1); }
+  }
+
+  @keyframes slideUp {
+    from { opacity: 0; transform: translateY(20px); }
+    to { opacity: 1; transform: translateY(0); }
+  }
+
+  @keyframes fadeIn {
+    from { opacity: 0; }
+    to { opacity: 1; }
+  }
+
+  @keyframes growBar {
+    from { width: 0%; }
+  }
+
+  /* ===== PRINT ===== */
+  @media print {
+    body { background: white; }
+    .job-card:hover { transform: none; box-shadow: none; }
+  }
+
+  @media (max-width: 768px) {
+    .hero-inner { grid-template-columns: 1fr; text-align: center; padding: 32px 24px; }
+    .main { grid-template-columns: 1fr; padding: 24px; }
+    .stats-inner { grid-template-columns: repeat(2,1fr); }
+    .declaration-inner { flex-direction: column; }
+  }
+</style>
+</head>
+<body>
+
+<!-- ===== HERO ===== -->
+<header class="hero">
+  <div class="hero-inner">
+    <div class="photo-wrap">
+      <div class="photo-ring">
+        <img src="papa.jpeg" alt="Manish V. Pathak" onerror="this.style.background='#2C4A6E';this.style.display='flex';this.style.alignItems='center';this.style.justifyContent='center';">
+      </div>
+      <span class="photo-badge">🏭 Currently Employed</span>
+    </div>
+
+    <div class="hero-info">
+      <h1 class="hero-name">Manish V. Pathak</h1>
+      <p class="hero-title">Senior Chemical Plant Operations Professional</p>
+      <div class="hero-tags">
+        <span class="hero-tag">⚗️ Chlor-Alkali Expert</span>
+        <span class="hero-tag">🔧 Utility Operations</span>
+        <span class="hero-tag">🛡️ HSE Compliance</span>
+        <span class="hero-tag">🌍 Saudi Arabia Experience</span>
+      </div>
+      <div class="hero-contacts">
+        <a href="tel:9016500017" class="hero-contact">
+          <span class="icon">📞</span> 9016500017
+        </a>
+        <a href="mailto:pathak.manish36.pm@gmail.com" class="hero-contact">
+          <span class="icon">✉️</span> pathak.manish36.pm@gmail.com
+        </a>
+        <span class="hero-contact">
+          <span class="icon">📍</span> Vadodara, Gujarat
+        </span>
+      </div>
+    </div>
+  </div>
+</header>
+
+<!-- ===== STATS BAR ===== -->
+<div class="stats-bar">
+  <div class="stats-inner">
+    <div class="stat">
+      <span class="stat-num">25+</span>
+      <span class="stat-label">Years Experience</span>
+    </div>
+    <div class="stat">
+      <span class="stat-num">10</span>
+      <span class="stat-label">Companies</span>
+    </div>
+    <div class="stat">
+      <span class="stat-num">6+</span>
+      <span class="stat-label">Industries</span>
+    </div>
+    <div class="stat">
+      <span class="stat-num">KSA</span>
+      <span class="stat-label">International Exp.</span>
+    </div>
+  </div>
+</div>
+
+<!-- ===== MAIN CONTENT ===== -->
+<div class="main">
+
+  <!-- LEFT COLUMN -->
+  <div class="left-col">
+
+    <!-- Summary -->
+    <section class="section">
+      <div class="section-header">
+        <div class="section-icon">🎯</div>
+        <h2 class="section-title">Professional Summary</h2>
+        <div class="section-line"></div>
+      </div>
+      <div class="summary-card">
+        A highly accomplished Chemical Plant Operations professional with over <strong>25 years of hands-on experience</strong> across chlor-alkali, petrochemicals, power generation, water treatment, and pharmaceutical industries. Proven expertise in utility operations, DM/RO/ETP plant management, HSE compliance, and manpower coordination. Demonstrated leadership managing large teams both domestically and in international environments including Saudi Arabia. Recognized as a reliable <strong>Permit Issuer Authority</strong> with a strong safety-first mindset and commitment to zero-incident operations.
+      </div>
+    </section>
+
+    <!-- Experience -->
+    <section class="section">
+      <div class="section-header">
+        <div class="section-icon">💼</div>
+        <h2 class="section-title">Professional Experience</h2>
+        <div class="section-line"></div>
+      </div>
+
+      <div class="job-card current">
+        <div class="job-header">
+          <div class="job-title">Utility Operator <span class="current-badge">CURRENT</span></div>
+          <span class="job-duration">Apr 2022 – Present</span>
+        </div>
+        <div class="job-company">🏢 GACL-NALCO Alkalies & Chemicals Pvt. Ltd. (GNAL)</div>
+        <ul class="job-bullets">
+          <li>Manage safe and efficient daily operation of chlor-alkali utility systems</li>
+          <li>Oversee timely functioning of mechanical rotating equipment across plant</li>
+          <li>Ensure strict HSE compliance and adherence to standard operating procedures</li>
+          <li>Collaborate with maintenance teams to minimize downtime and plant disruptions</li>
+        </ul>
+      </div>
+
+      <div class="job-card">
+        <div class="job-header">
+          <div class="job-title">Field Supervisor</div>
+          <span class="job-duration">Dec 2019 – Mar 2022</span>
+        </div>
+        <div class="job-company">🏢 Deepak Phenolics Limited</div>
+        <ul class="job-bullets">
+          <li>Supervised and managed a workforce of approximately <strong>50 operators and helpers</strong></li>
+          <li>Developed time schedules ensuring round-the-clock plant operational continuity</li>
+          <li>Managed loading/unloading of hazardous bullet tanks with zero safety incidents</li>
+          <li>Actively maintained safety standards and compliance during plant operations</li>
+        </ul>
+      </div>
+
+      <div class="job-card">
+        <div class="job-header">
+          <div class="job-title">Senior Plant Operator</div>
+          <span class="job-duration">Jan 2010 – Oct 2018</span>
+        </div>
+        <div class="job-company">🌍 Marafiq Saur Water & Power, Saudi Arabia</div>
+        <ul class="job-bullets">
+          <li>Operated and maintained <strong>chlorination plant for SWCC desalination facility</strong> in Saudi Arabia</li>
+          <li>Served as <strong>Permit Issuer Authority</strong> – Isolation, De-Isolation & system Start-up</li>
+          <li>Coordinated with maintenance for operational continuity; led manpower utilization planning</li>
+          <li>Ensured continuous and safe water supply operations over an 8-year tenure</li>
+        </ul>
+      </div>
+
+      <div class="job-card">
+        <div class="job-header">
+          <div class="job-title">Tank Farm Operator</div>
+          <span class="job-duration">May 2006 – Jan 2010</span>
+        </div>
+        <div class="job-company">🏢 Paguthan Energy Corp. & CLP India JV, Bharuch <span style="font-weight:400;color:#718096">(Thermax Contract)</span></div>
+        <ul class="job-bullets">
+          <li>Handled loading/unloading of Naphtha, HSD, H₂SO₄ and effluent chemicals safely</li>
+          <li>Operated DM plant and managed cooling towers and fire protection systems</li>
+          <li>Ensured zero spillage and maintained environmental compliance throughout tenure</li>
+        </ul>
+      </div>
+
+      <div class="job-card">
+        <div class="job-header">
+          <div class="job-title">Field Executive – Plant Operations</div>
+          <span class="job-duration">May 2008 – Dec 2008</span>
+        </div>
+        <div class="job-company">🏢 Reliance Industries Ltd., Jamnagar <span style="font-weight:400;color:#718096">(Calibre Consultant)</span></div>
+        <ul class="job-bullets">
+          <li>Supported erection & commissioning activities for new plant and equipment expansion</li>
+          <li>Performed routine sampling, changeovers, start-ups and system normalizations</li>
+          <li>Ensured safety for all hot and cold work activities during construction phase</li>
+        </ul>
+      </div>
+
+      <div class="job-card">
+        <div class="job-header">
+          <div class="job-title">Utility Operator</div>
+          <span class="job-duration">Jan 2001 – May 2006</span>
+        </div>
+        <div class="job-company">🏢 Sabic Research & Technologies Pvt. Ltd., Savli <span style="font-weight:400;color:#718096">(Pratibha Engineering)</span></div>
+        <ul class="job-bullets">
+          <li>Operated DM, RO, ETP plants; managed high vacuum pumps and screw compressors</li>
+          <li>Supplied utilities (vacuum, compressed air, N₂, hydrocarbons, helium) to R&D labs</li>
+          <li>Maintained liquid nitrogen tanks and ensured uninterrupted R&D support</li>
+        </ul>
+      </div>
+
+      <div class="job-card">
+        <div class="job-header">
+          <div class="job-title">ETP Chemist</div>
+          <span class="job-duration">Nov 1999 – Oct 2000</span>
+        </div>
+        <div class="job-company">🏢 Rubamin Pharmaceutical, Dabhasa, Padra</div>
+        <ul class="job-bullets">
+          <li>Operated and supervised ETP plant and liquid/solid incinerators</li>
+          <li>Conducted analysis of ETP unit samples ensuring full regulatory compliance</li>
+        </ul>
+      </div>
+
+      <div class="job-card">
+        <div class="job-header">
+          <div class="job-title">Field & R&D Chemist</div>
+          <span class="job-duration">Feb 1998 – Oct 1999</span>
+        </div>
+        <div class="job-company">🏢 Paramount Ltd., Vadodara</div>
+        <ul class="job-bullets">
+          <li>Commissioned and operated DM and ETP plants at IPCL Dahej, IOCL, CETP sites</li>
+          <li>Conducted GSFC Environment Audit assignments; ensured compliance at multiple sites</li>
+        </ul>
+      </div>
+
+      <div class="job-card">
+        <div class="job-header">
+          <div class="job-title">Field Engineer</div>
+          <span class="job-duration">Oct 1996 – Feb 1998</span>
+        </div>
+        <div class="job-company">🏢 Conserve Water Care System</div>
+        <ul class="job-bullets">
+          <li>Managed boiler and cooling tower water treatment systems across client sites</li>
+          <li>Conducted water sample analysis and chemical dosing optimization</li>
+        </ul>
+      </div>
+
+      <div class="job-card">
+        <div class="job-header">
+          <div class="job-title">Chemist</div>
+          <span class="job-duration">Aug 1995 – Aug 1996</span>
+        </div>
+        <div class="job-company">🏢 Alembic Chemicals, Vadodara</div>
+        <ul class="job-bullets">
+          <li>Manufactured pharmaceutical formulations including protinules powder and glycodin/narviton</li>
+          <li>Operated powder and liquid filling/packing machinery with precision</li>
+        </ul>
+      </div>
+
+    </section>
+  </div>
+
+  <!-- RIGHT SIDEBAR -->
+  <aside class="sidebar">
+
+    <!-- Core Skills -->
+    <div class="sidebar-card">
+      <h3 class="sidebar-title">⚙️ Core Skills</h3>
+      <div class="skill-item">
+        <span class="skill-name">Chemical Plant Ops</span>
+        <div class="skill-bar"><div class="skill-fill" style="width:97%"></div></div>
+      </div>
+      <div class="skill-item">
+        <span class="skill-name">DM / RO / ETP Plants</span>
+        <div class="skill-bar"><div class="skill-fill" style="width:95%"></div></div>
+      </div>
+      <div class="skill-item">
+        <span class="skill-name">HSE & Safety</span>
+        <div class="skill-bar"><div class="skill-fill" style="width:95%"></div></div>
+      </div>
+      <div class="skill-item">
+        <span class="skill-name">Chlorination Systems</span>
+        <div class="skill-bar"><div class="skill-fill" style="width:92%"></div></div>
+      </div>
+      <div class="skill-item">
+        <span class="skill-name">Permit-to-Work (PTW)</span>
+        <div class="skill-bar"><div class="skill-fill" style="width:90%"></div></div>
+      </div>
+      <div class="skill-item">
+        <span class="skill-name">Manpower Management</span>
+        <div class="skill-bar"><div class="skill-fill" style="width:88%"></div></div>
+      </div>
+      <div class="skill-item">
+        <span class="skill-name">Utility Systems</span>
+        <div class="skill-bar"><div class="skill-fill" style="width:94%"></div></div>
+      </div>
+      <div class="skill-item">
+        <span class="skill-name">Commissioning</span>
+        <div class="skill-bar"><div class="skill-fill" style="width:85%"></div></div>
+      </div>
+      <div class="skill-item">
+        <span class="skill-name">Process Troubleshooting</span>
+        <div class="skill-bar"><div class="skill-fill" style="width:89%"></div></div>
+      </div>
+      <div class="skill-item">
+        <span class="skill-name">Tank Farm Operations</span>
+        <div class="skill-bar"><div class="skill-fill" style="width:90%"></div></div>
+      </div>
+    </div>
+
+    <!-- Education -->
+    <div class="sidebar-card">
+      <h3 class="sidebar-title">🎓 Education</h3>
+      <div class="edu-item">
+        <div class="edu-icon">⚗️</div>
+        <div>
+          <div class="edu-deg">B.Sc Chemistry</div>
+          <div class="edu-year">1994 · Vadodara</div>
+        </div>
+      </div>
+      <div class="edu-item">
+        <div class="edu-icon">📚</div>
+        <div>
+          <div class="edu-deg">H.S.C</div>
+          <div class="edu-year">1990</div>
+        </div>
+      </div>
+      <div class="edu-item">
+        <div class="edu-icon">🏫</div>
+        <div>
+          <div class="edu-deg">S.S.C</div>
+          <div class="edu-year">1987</div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Industries -->
+    <div class="sidebar-card">
+      <h3 class="sidebar-title">🏭 Industries</h3>
+      <div class="industry-grid">
+        <span class="industry-tag">Chlor-Alkali</span>
+        <span class="industry-tag">Phenolics</span>
+        <span class="industry-tag">Petrochemicals</span>
+        <span class="industry-tag">Power Generation</span>
+        <span class="industry-tag">Water Treatment</span>
+        <span class="industry-tag">Pharmaceuticals</span>
+        <span class="industry-tag">Desalination</span>
+        <span class="industry-tag">R&D Support</span>
+      </div>
+    </div>
+
+    <!-- Languages -->
+    <div class="sidebar-card">
+      <h3 class="sidebar-title">🗣️ Languages</h3>
+      <div class="lang-item">
+        <span class="lang-name">Gujarati</span>
+        <div class="lang-level">
+          <div class="lang-dot filled"></div><div class="lang-dot filled"></div>
+          <div class="lang-dot filled"></div><div class="lang-dot filled"></div><div class="lang-dot filled"></div>
+        </div>
+      </div>
+      <div class="lang-item">
+        <span class="lang-name">Hindi</span>
+        <div class="lang-level">
+          <div class="lang-dot filled"></div><div class="lang-dot filled"></div>
+          <div class="lang-dot filled"></div><div class="lang-dot filled"></div><div class="lang-dot filled"></div>
+        </div>
+      </div>
+      <div class="lang-item">
+        <span class="lang-name">English</span>
+        <div class="lang-level">
+          <div class="lang-dot filled"></div><div class="lang-dot filled"></div>
+          <div class="lang-dot filled"></div><div class="lang-dot filled"></div><div class="lang-dot"></div>
+        </div>
+      </div>
+      <div class="lang-item">
+        <span class="lang-name">Arabic (Basic)</span>
+        <div class="lang-level">
+          <div class="lang-dot filled"></div><div class="lang-dot filled"></div>
+          <div class="lang-dot"></div><div class="lang-dot"></div><div class="lang-dot"></div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Personal -->
+    <div class="sidebar-card">
+      <h3 class="sidebar-title">👤 Personal</h3>
+      <div class="personal-grid">
+        <div class="personal-item">
+          <div class="personal-label">Date of Birth</div>
+          <div class="personal-value">03 Oct 1972</div>
+        </div>
+        <div class="personal-item">
+          <div class="personal-label">Marital Status</div>
+          <div class="personal-value">Married</div>
+        </div>
+        <div class="personal-item" style="grid-column:1/-1">
+          <div class="personal-label">Father's Name</div>
+          <div class="personal-value">Virendra R. Pathak</div>
+        </div>
+        <div class="personal-item" style="grid-column:1/-1">
+          <div class="personal-label">Address</div>
+          <div class="personal-value">215, Vijay Nagar, Tarsali, Vadodara 390009</div>
+        </div>
+      </div>
+    </div>
+
+  </aside>
+</div>
+
+<!-- DECLARATION -->
+<div class="declaration">
+  <div class="declaration-inner">
+    <p>I hereby declare that all information provided above is correct and true to the best of my knowledge and belief. I am committed to contributing my expertise and experience to any organization that values excellence in chemical plant operations and industrial safety.</p>
+    <div class="declaration-sig">Manish V. Pathak</div>
+  </div>
+</div>
+
+</body>
+</html>
